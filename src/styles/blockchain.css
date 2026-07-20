@@ -1,0 +1,242 @@
+.blockchain {
+  padding: 100px clamp(20px, 8vw, 120px);
+  background: linear-gradient(180deg, var(--bg) 0%, rgba(17, 41, 24, 0.533) 50%, var(--bg) 100%);
+}
+
+.blockchain-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.blockchain-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.blockchain-grid > * {
+  min-width: 0;
+}
+
+.blockchain-revenue {
+  color: var(--gold);
+}
+
+.blockchain-desc {
+  color: var(--gray);
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.blockchain-features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.blockchain-feature {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid rgba(58, 92, 70, 0.333);
+  border-radius: 14px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.blockchain-feature:hover {
+  border-color: rgba(46, 173, 92, 0.533);
+  transform: translateX(4px);
+}
+
+.blockchain-feature-icon {
+  color: var(--mint);
+  flex-shrink: 0;
+}
+
+.blockchain-feature-title {
+  font-weight: 600;
+  color: var(--white);
+  font-size: 15px;
+  margin-bottom: 3px;
+  font-family: var(--font-heading);
+}
+
+.blockchain-feature-desc {
+  font-size: 13px;
+  color: var(--gray);
+}
+
+.blockchain-stablecoin {
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 122, 60, 0.133) 100%);
+  border: 1px solid rgba(46, 173, 92, 0.267);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.blockchain-stablecoin-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.blockchain-stablecoin-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(46, 173, 92, 0.133);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mint);
+}
+
+.blockchain-stablecoin-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--mint);
+}
+
+.blockchain-stablecoin-subtitle {
+  font-size: 13px;
+  color: var(--gray);
+}
+
+.blockchain-stablecoin-point {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: flex-start;
+}
+
+.blockchain-stablecoin-check {
+  color: var(--mint);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.blockchain-flow {
+  background: var(--bg-card);
+  border: 1px solid rgba(245, 166, 35, 0.267);
+  border-radius: 20px;
+  padding: 28px;
+}
+
+.blockchain-flow-header {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--gold);
+  font-size: 14px;
+  margin-bottom: 20px;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.blockchain-flow-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.blockchain-flow-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card-hover);
+  border: 1px solid rgba(58, 92, 70, 0.267);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--gray);
+}
+
+.blockchain-flow-icon.highlight {
+  background: rgba(245, 166, 35, 0.133);
+  border-color: rgba(245, 166, 35, 0.4);
+  color: var(--gold);
+}
+
+.blockchain-flow-label {
+  font-size: 14px;
+  color: var(--gray);
+}
+
+.blockchain-flow-label.highlight {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.blockchain-flow-connector {
+  position: absolute;
+  left: 19px;
+  top: 40px;
+  width: 1px;
+  height: 16px;
+  background: var(--gray-dark);
+}
+
+@media (max-width: 900px) {
+  .blockchain {
+    padding: 80px 20px;
+  }
+
+  .blockchain-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .blockchain-stablecoin {
+    padding: 24px;
+  }
+
+  .blockchain-stablecoin-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .blockchain-flow {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blockchain {
+    padding: 72px 16px;
+  }
+
+  .blockchain-feature {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .blockchain-feature-title {
+    font-size: 14px;
+  }
+
+  .blockchain-feature-desc {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 901px) {
+  .blockchain {
+    padding: 80px clamp(40px, 6vw, 80px);
+  }
+
+  .blockchain-grid {
+    gap: 40px;
+  }
+}
