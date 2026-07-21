@@ -53,7 +53,7 @@ export function Hero({ lang }) {
       <div className="hero-gradient" />
 
       <div className="hero-content">
-        <div className="tag animate-on-scroll">{t.tag}</div>
+
 
         <h1 className="hero-title">
           {t.title}
