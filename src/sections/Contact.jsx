@@ -93,7 +93,7 @@ export function Contact({ lang }) {
               <div className="contact-form-email">
                 <HiMail size={18} />
                 {t.emailDirect}{' '}
-                <a href="mailto:contact@ecochain.uz">contact@ecochain.uz</a>
+                <a href="mailto:markpomidorchik@gmail.com">markpomidorchik@gmail.com</a>
               </div>
               <button type="submit" className="btn-primary">
                 <HiLightningBolt size={18} />
@@ -105,8 +105,8 @@ export function Contact({ lang }) {
 
         <div className="contact-social">
           {[
-            { label: t.instagram, icon: IoLogoInstagram, href: 'https://instagram.com/ecochain.uz' },
-            { label: t.telegram, icon: FaTelegramPlane, href: 'https://t.me/EcoChainBot' },
+            { label: t.instagram, icon: IoLogoInstagram, href: 'https://www.instagram.com/ecochain_uzb?igsh=MXcyaWhvN2V4dTFteA==' },
+            { label: t.telegram, icon: FaTelegramPlane, href: 'https://t.me/Eco_Chain_Bot' },
             { label: t.linkedin, icon: IoLogoLinkedin, href: '#' },
           ].map((s, i) => {
             const Icon = s.icon;
