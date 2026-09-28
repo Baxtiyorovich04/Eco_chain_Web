@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import '../styles/node-network.css';
 
 export function NodeNetwork() {
   const canvasRef = useRef(null);
@@ -100,5 +99,5 @@ export function NodeNetwork() {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="node-network" />;
+  return <canvas ref={canvasRef} className="pointer-events-none absolute inset-0 h-full w-full opacity-55 motion-reduce:hidden" />;
 }

@@ -117,7 +117,7 @@ export const translations = {
       successTitle: "Message received!",
       successDesc: "We'll get back to you within 24 hours.",
       instagram: "Instagram",
-      telegram: "Telegram Bot",
+      telegram: "Telegram",
       linkedin: "LinkedIn"
     }
   },
@@ -239,7 +239,7 @@ export const translations = {
       successTitle: "Xabar qabul qilindi!",
       successDesc: "Biz 24 soat ichida sizga javob beramiz.",
       instagram: "Instagram",
-      telegram: "Telegram Bot",
+      telegram: "Telegram",
       linkedin: "LinkedIn"
     }
   },
@@ -361,7 +361,7 @@ export const translations = {
       successTitle: "Сообщение получено!",
       successDesc: "Мы ответим вам в течение 24 часов.",
       instagram: "Instagram",
-      telegram: "Telegram Bot",
+      telegram: "Telegram",
       linkedin: "LinkedIn"
     }
   }

@@ -1,58 +1,32 @@
-import { useFadeIn } from '../hooks/useFadeIn';
-import { MdDelete } from 'react-icons/md';
-import { RiRecycleFill } from 'react-icons/ri';
-import { IoCamera, IoQrCode } from 'react-icons/io5';
-import { HiCube, HiCash } from 'react-icons/hi';
-import { translations } from '../utils/translations';
-import '../styles/howItWorks.css';
+import { Banknote, Box, Camera, QrCode, Recycle, Trash2 } from 'lucide-react'
+import { Section, SectionHeading } from '@/components/Section'
+import { Reveal } from '@/components/Reveal'
+import { Card } from '@/components/ui/card'
+import { IconTile } from '@/components/IconTile'
+import { translations } from '@/utils/translations'
 
 export function HowItWorks({ lang }) {
-  const ref = useFadeIn();
-  const t = translations[lang].howItWorks;
-
-  const steps = [
-    { icon: MdDelete, step: '01', title: t.steps[0].title, desc: t.steps[0].desc, color: 'gray' },
-    { icon: RiRecycleFill, step: '02', title: t.steps[1].title, desc: t.steps[1].desc, color: 'mint' },
-    { icon: IoCamera, step: '03', title: t.steps[2].title, desc: t.steps[2].desc, color: 'mint-light' },
-    { icon: HiCube, step: '04', title: t.steps[3].title, desc: t.steps[3].desc, color: 'gold' },
-    { icon: IoQrCode, step: '05', title: t.steps[4].title, desc: t.steps[4].desc, color: 'mint' },
-    { icon: HiCash, step: '06', title: t.steps[5].title, desc: t.steps[5].desc, color: 'mint-light' },
-  ];
+  const t = translations[lang].howItWorks
+  const icons = [Trash2, Recycle, Camera, Box, QrCode, Banknote]
+  const tones = ['sage', 'mint', 'light', 'gold', 'mint', 'light']
 
   return (
-    <section id="how" className="how-it-works">
-      <div ref={ref} className="how-it-works-container">
-        <div className="how-it-works-header">
-          <div className="tag animate-on-scroll">{t.tag}</div>
-          <h2 className="section-title animate-on-scroll" style={{ animationDelay: '0.1s' }}>
-            {t.title}
-          </h2>
-          <p className="section-sub animate-on-scroll" style={{ animationDelay: '0.2s' }}>
-            {t.subtitle}
-          </p>
-        </div>
-
-        <div className="how-it-works-grid">
-          {steps.map((s, i) => {
-            const Icon = s.icon;
-            return (
-              <div
-                key={i}
-                className="card animate-on-scroll how-it-works-card"
-                style={{ animationDelay: `${0.3 + i * 0.1}s` }}
-              >
-                <div className="how-it-works-step-number">{s.step}</div>
-                <div className="how-it-works-icon" data-color={s.color}>
-                  <Icon size={40} />
-                </div>
-                <h3 className="how-it-works-title">{s.title}</h3>
-                <p className="how-it-works-desc">{s.desc}</p>
-                {i < steps.length - 1 && <div className="how-it-works-arrow" />}
+    <Section id="how">
+      <SectionHeading tag={t.tag} title={t.title} subtitle={t.subtitle} align="center" />
+      <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {t.steps.map((step, i) => (
+          <Reveal key={step.title} delay={i * 0.06}>
+            <Card className="h-full p-6">
+              <div className="mb-5 flex items-center justify-between">
+                <IconTile icon={icons[i]} tone={tones[i]} />
+                <span className="font-mono text-sm text-muted-foreground">0{i + 1}</span>
               </div>
-            );
-          })}
-        </div>
+              <h3 className="text-xl font-bold">{step.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
+            </Card>
+          </Reveal>
+        ))}
       </div>
-    </section>
-  );
+    </Section>
+  )
 }

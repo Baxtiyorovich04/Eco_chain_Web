@@ -9,13 +9,9 @@ import { Machine } from './sections/Machine';
 import { Investors } from './sections/Investors';
 import { Contact } from './sections/Contact';
 import { injectSEOMeta } from './utils/seo';
-import './index.css';
 
 function App() {
-  const [lang, setLang] = useState(() => {
-    const saved = localStorage.getItem('ecochain-lang');
-    return saved || 'en';
-  });
+  const [lang, setLang] = useState(() => localStorage.getItem('ecochain-lang') || 'en');
 
   useEffect(() => {
     localStorage.setItem('ecochain-lang', lang);
@@ -25,28 +21,8 @@ function App() {
     injectSEOMeta();
   }, []);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
-    );
-
-    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
-      observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, [lang]);
-
   return (
-    <>
+    <div className="min-h-screen bg-background text-foreground">
       <Nav lang={lang} setLang={setLang} />
       <main>
         <Hero lang={lang} />
@@ -58,7 +34,7 @@ function App() {
         <Contact lang={lang} />
       </main>
       <Footer lang={lang} />
-    </>
+    </div>
   );
 }
 
